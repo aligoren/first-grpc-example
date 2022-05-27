@@ -23,9 +23,9 @@ func main() {
 		Message: "Hello world!",
 	})
 
-	fmt.Printf("Response Message: ---> %s\n", resp.Message)
+	fmt.Printf("Response Message: ----> %s\n", resp.Message)
 
 	timeStampResponse, _ := client.GetDate(context.Background(), &emptypb.Empty{})
 
-	fmt.Printf("Response timestamp ---> %s", timeStampResponse.Date.AsTime().String())
+	fmt.Printf("Response timestamp ----> %s", timeStampResponse.Date.AsTime().String())
 }
