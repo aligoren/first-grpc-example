@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+
+package main;
+
+option go_package = "./proto";
+
+service HelloApi {
+  rpc WriteHello(HelloRequest) returns (HelloResponse) {}
+  rpc GetDate(google.protobuf.Empty) returns (DateResponse) {}
+}
+
+message HelloRequest {
+  string message = 1;
+}
+
+message HelloResponse {
+  string message = 1;
+}
+
+message DateResponse {
+  google.protobuf.Timestamp date = 1;
+}
